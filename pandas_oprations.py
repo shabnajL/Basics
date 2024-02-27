@@ -1,4 +1,5 @@
 #### 15 Python Pandas operations
+import pandas as pd
 1. df.info() # Prints information about the DataFrame
 2. df.describe() # Generates state of the columns 
 3. df.head() # Prints first (n) rows of the DataFrame
