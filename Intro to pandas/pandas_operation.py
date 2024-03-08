@@ -57,3 +57,13 @@ def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
     df = pd.DataFrame(students)
     result = df.dropna(subset=['name'])
     return result
+
+##### Modify Columns
+import pandas as pd
+
+def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    df = pd.DataFrame(employees)
+    salary = df['salary'] #Selecting the intended column
+    result = salary * 2     #performing necessary operation on the column
+    df['salary'] = result  #updating the column
+    return df
