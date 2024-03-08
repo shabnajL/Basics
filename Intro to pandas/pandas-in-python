@@ -1,0 +1,6 @@
+Pandas is a Python library that provides data structures 
+for efficiently storing and manipulating data. 
+It is particularly useful for working with tabular data, 
+such as CSV files or SQL database tables. 
+Pandas provides a variety of functions for performing operations on data, 
+including filtering, sorting, grouping, and aggregation.
