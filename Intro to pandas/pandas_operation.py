@@ -67,3 +67,16 @@ def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
     result = salary * 2     #performing necessary operation on the column
     df['salary'] = result  #updating the column
     return df
+
+##### Rename Columns
+import pandas as pd
+
+def renameColumns(students: pd.DataFrame) -> pd.DataFrame:
+    df = pd.DataFrame(students)
+    ### using rename() 
+    df2 = df.rename(columns = {'id': 'student_id', 'first' : 'first_name', 'last': 'last_name', 'age' : 'age_in_years'} )
+    return df2
+    ### ---------------------- ###
+    ### using columns() 
+    # df.columns = ['student_id', 'first_name', 'last_name', 'age_in_years']
+    # return df
