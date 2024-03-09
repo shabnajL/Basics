@@ -80,3 +80,11 @@ def renameColumns(students: pd.DataFrame) -> pd.DataFrame:
     ### using columns() 
     # df.columns = ['student_id', 'first_name', 'last_name', 'age_in_years']
     # return df
+
+##### Change datatype
+import pandas as pd
+
+def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
+    df = pd.DataFrame(students)
+    df["grade"] = df["grade"].astype(int)
+    return df
