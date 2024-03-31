@@ -96,4 +96,48 @@ def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
     df = pd.DataFrame(products)
     df['quantity'].fillna(0, inplace= True)  #updating the column with null value
     return df
-    
+
+##### Reshape Data: Concatenate
+import pandas as pd
+
+def concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
+    frames = [df1, df2]
+    df = pd.concat(frames)
+    return df
+
+
+##### Reshape Data: Pivot
+import pandas as pd
+
+def pivotTable(weather: pd.DataFrame) -> pd.DataFrame:
+   df = pd.DataFrame(weather)
+   pivoted = df.pivot(index="month", columns="city", values ="temperature")
+   return pivoted
+
+
+##### Reshape Data: Melt
+import pandas as pd
+
+def meltTable(report: pd.DataFrame) -> pd.DataFrame:
+    df = pd.DataFrame(report)
+    melted = pd.melt(df, id_vars=["product"], value_vars = None, var_name= "quarter", value_name="sales")
+    ''' syntax:
+    pandas.melt(frame, id_vars=None, value_vars=None, 
+                            var_name=None, value_name='value',
+                            col_level=None, ignore_index=True)
+    '''
+    return melted
+
+
+
+##### Method Chaining
+import pandas as pd
+
+def findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:
+    df = pd.DataFrame(animals)
+    weighs = df[df['weight']>100]
+    # return weighs
+    sorted = weighs.sort_values(by='weight', ascending=False)
+    # return sorted
+    result = sorted[['name']]
+    return result
